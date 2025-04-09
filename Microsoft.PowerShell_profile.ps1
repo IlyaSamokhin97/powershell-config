@@ -2,7 +2,7 @@ function Prompt {
     $gray = "`e[90m"
     $reset = "`e[0m"
 
-    "$gray$((Get-Date).ToString("yy/MM/dd HH:mm:ss"))$reset PS $(Get-Location)>"
+    "$gray$((Get-Date).ToString("yy/MM/dd HH:mm:ss"))$reset PS $(Get-Location)>`r`n"
 }
 
 function y {
