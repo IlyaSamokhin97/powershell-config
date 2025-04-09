@@ -1,3 +1,5 @@
+#Requires -Version 7.5
+
 function Prompt {
     $gray = "`e[90m"
     $reset = "`e[0m"
