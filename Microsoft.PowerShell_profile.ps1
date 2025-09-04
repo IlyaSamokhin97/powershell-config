@@ -18,15 +18,15 @@ function y {
 }
 
 function gb {
-    git branch
+    git branch $args
 }
 
 # alias for Get-Location
 Remove-Alias gl -Force
 function gl {
-    git log --oneline
+    git log --oneline $args
 }
 
 function gs {
-    git status -s -b
+    git status -s -b $args
 }
