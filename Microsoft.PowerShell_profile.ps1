@@ -1,10 +1,14 @@
 #Requires -Version 7.5
 
 function prompt {
-    $gray = "`e[90m"
-    $reset = "`e[0m"
+    $loc = $executionContext.SessionState.Path.CurrentLocation;
 
-    "`r`n$gray$((Get-Date).ToString("yy/MM/dd HH:mm:ss"))$reset PS $(Get-Location)>`r`n"
+    $out = ""
+    if ($loc.Provider.Name -eq "FileSystem") {
+        $out += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
+    }
+    $out += "PS $loc$('>' * ($nestedPromptLevel + 1)) ";
+    return $out
 }
 
 function y {
